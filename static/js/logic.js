@@ -60,3 +60,8 @@ function createMap(earthquakes) {
         "Light Map": lightmap
     };
 
+    var overlayMaps = {
+        "Earthquakes": earthquakes
+    };
+
+
