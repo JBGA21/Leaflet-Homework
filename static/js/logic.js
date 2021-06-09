@@ -54,3 +54,9 @@ function createMap(earthquakes) {
         id: "mapbox.light",
         accessToken: "pk.eyJ1Ijoia2FyZW5lbWNnZWUiLCJhIjoiY2sweDMzcnFmMDJmZTNjb2M2bTA0bDBsYiJ9.2VPrGXusLoJpCMfTWrgBRQ"
     });
+
+    var baseMaps = {
+        "Outdoors": outdoors,
+        "Light Map": lightmap
+    };
+
