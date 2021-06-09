@@ -70,3 +70,6 @@ function createMap(earthquakes) {
         layers: [outdoors, earthquakes]
     });
 
+    L.control.layers(baseMaps, overlayMaps, { collapsed: false })
+        .addTo(map);
+
