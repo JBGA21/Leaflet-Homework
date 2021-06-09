@@ -73,3 +73,11 @@ function createMap(earthquakes) {
     L.control.layers(baseMaps, overlayMaps, { collapsed: false })
         .addTo(map);
 
+    var legend = L.control({ position: 'bottomright' });
+
+    legend.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = [0, 1, 2, 3, 4],
+            labels = [];
+
+
