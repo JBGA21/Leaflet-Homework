@@ -64,4 +64,9 @@ function createMap(earthquakes) {
         "Earthquakes": earthquakes
     };
 
+    var map = L.map("map", {
+        center: [39.83, -98.58],
+        zoom: 4.5,
+        layers: [outdoors, earthquakes]
+    });
 
