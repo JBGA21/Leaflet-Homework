@@ -13,3 +13,28 @@ function getColor(d) {
                     'rgb(189,0,38)';
 }
 
+function createFeatures(earthquakeData) {
+
+    function onEachFeature(feature, layer) {
+        layer.bindPopup("<h3 align='center'>" + feature.properties.place +
+            "</h3><hr><p><u>Occurrence:</u> " + new Date(feature.properties.time) + "</p>" +
+            "</h3><p><u>Magnitude:</u> " + feature.properties.mag + "</p>");
+    }
+
+    var earthquakes = L.geoJSON(earthquakeData, {
+        onEachFeature: onEachFeature,
+        pointToLayer: function (feature, latlng) {
+            var geojsonMarkerOptions = {
+                radius: 4 * feature.properties.mag,
+                fillColor: getColor(feature.properties.mag),
+                color: "black",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            };
+            return L.circleMarker(latlng, geojsonMarkerOptions);
+        }
+    });
+
+    createMap(earthquakes);
+}
