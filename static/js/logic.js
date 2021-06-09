@@ -80,4 +80,14 @@ function createMap(earthquakes) {
             grades = [0, 1, 2, 3, 4],
             labels = [];
 
+        div.innerHTML += 'Magnitude<br><hr>'
+
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHTML +=
+                '<i style="background:' + getColor(grades[i] + 1) + '">&nbsp&nbsp&nbsp&nbsp</i> ' +
+                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+        }
+
+        return div;
+    };
 
